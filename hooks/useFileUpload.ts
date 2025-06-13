@@ -41,6 +41,7 @@ export function useFileUpload() {
       const synapse = await Synapse.create({
         provider: signer.provider,
         disableNonceManager: false,
+        withCDN: true
       });
 
       const { providerId } = await getBestProofset(signer, network, address);
@@ -83,6 +84,7 @@ export function useFileUpload() {
             console.log("Provider selected:", provider);
           },
         },
+        withCDN: true
       });
 
       setStatus("Uploading file...");
