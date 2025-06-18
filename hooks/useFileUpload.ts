@@ -60,6 +60,7 @@ export function useFileUpload() {
 
       const storageService = await synapse.createStorage({
         providerId,
+        withCDN: true,
         callbacks: {
           onProofSetResolved: (info) => {
             console.log("Proof set resolved:", info);
@@ -84,7 +85,6 @@ export function useFileUpload() {
             console.log("Provider selected:", provider);
           },
         },
-        withCDN: true
       });
 
       setStatus("Uploading file...");
