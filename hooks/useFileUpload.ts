@@ -41,6 +41,7 @@ export function useFileUpload() {
       const synapse = await Synapse.create({
         provider: signer.provider,
         disableNonceManager: false,
+        withCDN: true
       });
 
       const { providerId } = await getBestProofset(signer, network, address);
@@ -59,6 +60,7 @@ export function useFileUpload() {
 
       const storageService = await synapse.createStorage({
         providerId,
+        withCDN: true,
         callbacks: {
           onProofSetResolved: (info) => {
             console.log("Proof set resolved:", info);

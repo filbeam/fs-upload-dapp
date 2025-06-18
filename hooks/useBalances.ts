@@ -35,7 +35,7 @@ export function useBalances() {
       );
       const pandoraBalance = await pandoraService.checkAllowanceForStorage(
         NUMBER_OF_GB * ONE_GB_IN_BYTES,
-        false,
+        true,
         synapse.payments
       );
 

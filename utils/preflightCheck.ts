@@ -22,7 +22,7 @@ export const preflightCheck = async (
   );
   const preflight = await pandoraService.checkAllowanceForStorage(
     file.size,
-    false,
+    true,
     synapse.payments
   );
 
